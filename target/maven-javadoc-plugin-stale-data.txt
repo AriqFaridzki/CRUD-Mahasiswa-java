@@ -1,0 +1,48 @@
+@options
+@packages
+-classpath
+'C:/Users/Luminescenents/.m2/repository/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar;C:/Users/Luminescenents/.m2/repository/com/google/protobuf/protobuf-java/3.21.9/protobuf-java-3.21.9.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'18'
+-sourcepath
+'C:/Users/Luminescenents/Documents/NetBeansProjects/mahasiswaCRUD/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2023. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/Luminescenents/Documents/NetBeansProjects/mahasiswaCRUD/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'mahasiswaCRUD 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'mahasiswaCRUD 1.0-SNAPSHOT API'
+com.stmikamik.mahasiswacrud
+C:\Users\Luminescenents\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar = 1687326145308
+C:\Users\Luminescenents\.m2\repository\com\google\protobuf\protobuf-java\3.21.9\protobuf-java-3.21.9.jar = 1687326145087
+C:\Users\Luminescenents\Documents\NetBeansProjects\mahasiswaCRUD\src\main\java = 1687348828306
+C:\Users\Luminescenents\Documents\NetBeansProjects\mahasiswaCRUD\target\site\apidocs\allclasses-index.html = 1687355926832
+C:\Users\Luminescenents\Documents\NetBeansProjects\mahasiswaCRUD\target\site\apidocs\allpackages-index.html = 1687355926835
+C:\Users\Luminescenents\Documents\NetBeansProjects\mahasiswaCRUD\target\site\apidocs\copy.svg = 1687355926869
+C:\Users\Luminescenents\Documents\NetBeansProjects\mahasiswaCRUD\target\site\apidocs\element-list = 1687355926731
+C:\Users\Luminescenents\Documents\NetBeansProjects\mahasiswaCRUD\target\site\apidocs\help-doc.html = 1687355926862
+C:\Users\Luminescenents\Documents\NetBeansProjects\mahasiswaCRUD\target\site\apidocs\index-all.html = 1687355926855
+C:\Users\Luminescenents\Documents\NetBeansProjects\mahasiswaCRUD\target\site\apidocs\index.html = 1687355926857
+C:\Users\Luminescenents\Documents\NetBeansProjects\mahasiswaCRUD\target\site\apidocs\jquery-ui.overrides.css = 1687355926907
+C:\Users\Luminescenents\Documents\NetBeansProjects\mahasiswaCRUD\target\site\apidocs\member-search-index.js = 1687355926841
+C:\Users\Luminescenents\Documents\NetBeansProjects\mahasiswaCRUD\target\site\apidocs\module-search-index.js = 1687355926836
+C:\Users\Luminescenents\Documents\NetBeansProjects\mahasiswaCRUD\target\site\apidocs\overview-tree.html = 1687355926817
+C:\Users\Luminescenents\Documents\NetBeansProjects\mahasiswaCRUD\target\site\apidocs\package-search-index.js = 1687355926838
+C:\Users\Luminescenents\Documents\NetBeansProjects\mahasiswaCRUD\target\site\apidocs\script.js = 1687355926867
+C:\Users\Luminescenents\Documents\NetBeansProjects\mahasiswaCRUD\target\site\apidocs\search.js = 1687355926872
+C:\Users\Luminescenents\Documents\NetBeansProjects\mahasiswaCRUD\target\site\apidocs\serialized-form.html = 1687355926787
+C:\Users\Luminescenents\Documents\NetBeansProjects\mahasiswaCRUD\target\site\apidocs\stylesheet.css = 1687355926866
+C:\Users\Luminescenents\Documents\NetBeansProjects\mahasiswaCRUD\target\site\apidocs\tag-search-index.js = 1687355926842
+C:\Users\Luminescenents\Documents\NetBeansProjects\mahasiswaCRUD\target\site\apidocs\type-search-index.js = 1687355926839

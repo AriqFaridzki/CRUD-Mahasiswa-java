@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.stmikamik.mahasiswacrud","l":"databaseConnector"},{"p":"com.stmikamik.mahasiswacrud","l":"mahasiswa"},{"p":"com.stmikamik.mahasiswacrud","l":"mahasiswaRepository"},{"p":"com.stmikamik.mahasiswacrud","l":"mahasiwaGUI"},{"p":"com.stmikamik.mahasiswacrud","l":"main"}];updateSearchResults();
