@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.crypto.Mac;
 
-public class mahasiswaRepository {
+public class MahasiswaRepository {
  databaseConnector connector = new databaseConnector();
  Connection connection = connector.getConnection();
  
@@ -27,7 +27,7 @@ public class mahasiswaRepository {
     
 //    Connection connection = connector.getConnection();
         
-//    public mahasiswaRepository(){
+//    public MahasiswaRepository(){
 //           try {
 //            connector.checkConnection();
 //        } catch (SQLException e) {
@@ -64,11 +64,11 @@ public class mahasiswaRepository {
              
         }
 //        System.out.println(values);
-        System.out.println("berhasil coy " + RowsAffected);
+//        System.out.println("berhasil coy " + RowsAffected);
        return RowsAffected;
     }
     
-    public void updateMahasiswa(Mahasiswa mahasiswa){
+    public int updateMahasiswa(Mahasiswa mahasiswa){
         String query = "UPDATE tb_mahasiswa SET nama=?, jurusan=?,jenis_kelamin=?,alamat=? WHERE npm = ?";
            
             String npm = mahasiswa.getNpm();
@@ -97,10 +97,11 @@ public class mahasiswaRepository {
                 connector.closeConnection();
              
         }
-             
+                          return RowsAffected;
+
     }
     
-    public void deleteMahasiswaByNPM(Mahasiswa mahasiswa){
+    public int deleteMahasiswaByNPM(Mahasiswa mahasiswa){
            String query = "DELETE FROM tb_mahasiswa WHERE npm = ?";
            
             String npm = mahasiswa.getNpm();
@@ -122,6 +123,8 @@ public class mahasiswaRepository {
                 connector.closeConnection();
              
         }
+             
+             return RowsAffected;
         
     }
     
