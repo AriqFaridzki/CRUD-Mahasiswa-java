@@ -1,5 +1,8 @@
 package com.stmikamik.mahasiswacrud;
 
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -10,12 +13,16 @@ package com.stmikamik.mahasiswacrud;
  * @author Luminescenents
  */
 public class mahasiwaGUI extends javax.swing.JFrame {
-
+    
+    
+        
     /**
      * Creates new form mahasiwaGUI
      */
     public mahasiwaGUI() {
         initComponents();
+        
+       
     }
 
     /**
@@ -48,10 +55,12 @@ public class mahasiwaGUI extends javax.swing.JFrame {
         updateBtn = new javax.swing.JButton();
         findBtn = new javax.swing.JButton();
         deleteBtn = new javax.swing.JButton();
+        RefreshBtn = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
+        statusLabel = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tableMahasiswa = new javax.swing.JTable();
-        exitBtn = new javax.swing.JButton();
+        exitBtn1 = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -80,7 +89,7 @@ public class mahasiwaGUI extends javax.swing.JFrame {
 
         perempuanRadio.setText("Perempuan");
 
-        lakiRadio.setText("Laki-Laki");
+        lakiRadio.setText("Laki");
 
         jLabel5.setText("Alamat");
 
@@ -88,7 +97,7 @@ public class mahasiwaGUI extends javax.swing.JFrame {
         alamatField.setRows(5);
         jScrollPane1.setViewportView(alamatField);
 
-        jLabel6.setText("Data Controls");
+        jLabel6.setText("Status :");
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2.setName(""); // NOI18N
@@ -121,12 +130,19 @@ public class mahasiwaGUI extends javax.swing.JFrame {
             }
         });
 
+        RefreshBtn.setText("Show All");
+        RefreshBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RefreshBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(18, 18, 18)
                 .addComponent(AddBtn)
                 .addGap(18, 18, 18)
                 .addComponent(updateBtn)
@@ -134,54 +150,65 @@ public class mahasiwaGUI extends javax.swing.JFrame {
                 .addComponent(findBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(deleteBtn)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(RefreshBtn)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AddBtn)
                     .addComponent(deleteBtn)
                     .addComponent(updateBtn)
-                    .addComponent(findBtn))
-                .addContainerGap())
+                    .addComponent(findBtn)
+                    .addComponent(RefreshBtn))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        statusLabel.setText("Klik Show All untuk Menampilkan Semua Data");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel1)
-                                    .addGap(66, 66, 66)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(55, 55, 55)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5))
-                                .addGap(55, 55, 55)))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(perempuanRadio)
-                            .addComponent(lakiRadio)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(npmField, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(namaField, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jurusanCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                    .addComponent(jLabel1)
+                                                    .addGap(66, 66, 66)))
+                                            .addComponent(jLabel3)
+                                            .addComponent(jLabel4)
+                                            .addComponent(jLabel5))
+                                        .addGap(53, 53, 53)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(perempuanRadio)
+                                            .addComponent(lakiRadio)
+                                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(npmField, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(namaField, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jurusanCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(statusLabel))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -214,7 +241,9 @@ public class mahasiwaGUI extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8)
-                .addComponent(jLabel6)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(statusLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(15, Short.MAX_VALUE))
@@ -238,10 +267,10 @@ public class mahasiwaGUI extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(tableMahasiswa);
 
-        exitBtn.setText("Keluar");
-        exitBtn.addActionListener(new java.awt.event.ActionListener() {
+        exitBtn1.setText("Keluar");
+        exitBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitBtnActionPerformed(evt);
+                exitBtn1ActionPerformed(evt);
             }
         });
 
@@ -254,10 +283,13 @@ public class mahasiwaGUI extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(exitBtn)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(491, Short.MAX_VALUE)
+                    .addComponent(exitBtn1)
+                    .addGap(25, 25, 25)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -266,33 +298,169 @@ public class mahasiwaGUI extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(exitBtn)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(872, Short.MAX_VALUE)
+                    .addComponent(exitBtn1)
+                    .addGap(30, 30, 30)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+//    lakiRadio
+//                perempuanRadio
+//                namaField
+//                npmField
+//                        jurusanCombo
+//                                alamatField
+    
+        String namaLengkap;
+        String npm ;
+        String jurusan;
+        String alamat;
+        String jenisKelamin;
+        MahasiswaRepository mahaRepository = new MahasiswaRepository();
+
+        
+
+        
+    private Mahasiswa getAllFields(){
+        npm = npmField.getText();
+        jurusan = jurusanCombo.getSelectedItem().toString();
+        namaLengkap = namaField.getText();
+        alamat = alamatField.getText();
+        
+        if (lakiRadio.isSelected()) {
+           jenisKelamin = lakiRadio.getActionCommand(); // Nilai "Laki-laki"
+        } else if (perempuanRadio.isSelected()) {
+           jenisKelamin = perempuanRadio.getActionCommand(); // Nilai "Perempuan"
+}
+        
+      return new Mahasiswa(
+                npm, 
+                namaLengkap, 
+                jurusan, 
+                jenisKelamin, 
+                alamat );
+        
+    }
+    
     private void AddBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBtnActionPerformed
         // TODO add your handling code here:
+
+        Mahasiswa mahasiswa = getAllFields();
+        int rowAffected = mahaRepository.addMahasiswa(mahasiswa);
+        
+         if (rowAffected > 1)
+            statusLabel.setText("Data Berhasil Ditambah" );
+        else{
+            statusLabel.setText("Data Gagal Ditambah");
+        }
     }//GEN-LAST:event_AddBtnActionPerformed
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
         // TODO add your handling code here:
+        
+       Mahasiswa mahasiswa = getAllFields();
+       int rowAffected =  mahaRepository.updateMahasiswa(mahasiswa);
+       
+        if (rowAffected > 1)
+            statusLabel.setText("Data Berhasil Di Update" );
+        else{
+            statusLabel.setText("Data Gagal Di Update");
+        }
+       
     }//GEN-LAST:event_updateBtnActionPerformed
 
     private void findBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_findBtnActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) tableMahasiswa.getModel();
+            int rowCount = model.getRowCount();
+                    //Remove rows one by one from the end of the table
+                    for (int i = rowCount - 1; i >= 0; i--) {
+                        model.removeRow(i);
+
+
+                   }
+                    
+        Mahasiswa mahasiswa = getAllFields();
+        if(mahaRepository.getMahasiswaByNPM(mahasiswa) != null){
+            Mahasiswa mahasiswaTable =  mahaRepository.getMahasiswaByNPM(mahasiswa);
+            String[] Tabledata = {
+               mahasiswaTable.getNpm(),
+               mahasiswaTable.getNamaLengkap(),
+               mahasiswaTable.getJurusan(),
+               mahasiswaTable.getJenisKelamin(),
+               mahasiswaTable.getAlamat() };
+            
+               model.addRow(Tabledata);
+               statusLabel.setText("Data Ditemukan !" );
+        
+        }else{
+            statusLabel.setText("Data Tidak Ditemukan !" );
+
+        }
+        
+        
+        
     }//GEN-LAST:event_findBtnActionPerformed
 
     private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
         // TODO add your handling code here:
+        Mahasiswa mahasiswa = getAllFields();
+       int rowAffected = mahaRepository.deleteMahasiswaByNPM(mahasiswa);
+       
+        if (rowAffected > 1)
+            statusLabel.setText("Data Berhasil Dihapus" );
+        else{
+            statusLabel.setText("Data Gagal Dihapus");
+        }
+        
+        
+  
     }//GEN-LAST:event_deleteBtnActionPerformed
 
-    private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
+    private void RefreshBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_exitBtnActionPerformed
+        DefaultTableModel model = (DefaultTableModel) tableMahasiswa.getModel();
+        int rowCount = model.getRowCount();
+                    //Remove rows one by one from the end of the table
+                    for (int i = rowCount - 1; i >= 0; i--) {
+                        model.removeRow(i);
+
+
+                   }
+        
+        if(mahaRepository.getAllMahasiswa() != null){
+            List<Mahasiswa> mahasiswaTable =  mahaRepository.getAllMahasiswa();
+            
+                for (int i = 0; i < mahasiswaTable.size(); i++) {
+                    Mahasiswa mahasiswa = mahasiswaTable.get(i);
+                    // Lakukan sesuatu dengan setiap objek Mahasiswa
+                    String npm = mahasiswa.getNpm();
+                    String nama = mahasiswa.getNamaLengkap();
+                    String jurusan = mahasiswa.getJurusan();
+                    String jenisKelamin = mahasiswa.getJenisKelamin();
+                    String alamat = mahasiswa.getAlamat();
+                    model.addRow(new String[] {npm, nama, jurusan, jenisKelamin, alamat});
+                    
+                    statusLabel.setText("Data Telah Di Refresh");
+
+                }
+                
+        }else{
+            statusLabel.setText("Data Kosong");
+
+        }
+    }//GEN-LAST:event_RefreshBtnActionPerformed
+
+    private void exitBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtn1ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_exitBtn1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -330,15 +498,18 @@ public class mahasiwaGUI extends javax.swing.JFrame {
             
            
         });
+            
+//            System.out.println(lakiRadio.getText() != null);
         
-        
+//        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddBtn;
+    private javax.swing.JButton RefreshBtn;
     private javax.swing.JTextArea alamatField;
     private javax.swing.JButton deleteBtn;
-    private javax.swing.JButton exitBtn;
+    private javax.swing.JButton exitBtn1;
     private javax.swing.JButton findBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -358,6 +529,7 @@ public class mahasiwaGUI extends javax.swing.JFrame {
     private javax.swing.JTextField namaField;
     private javax.swing.JTextField npmField;
     private javax.swing.JRadioButton perempuanRadio;
+    private javax.swing.JLabel statusLabel;
     private javax.swing.JTable tableMahasiswa;
     private javax.swing.JButton updateBtn;
     // End of variables declaration//GEN-END:variables
