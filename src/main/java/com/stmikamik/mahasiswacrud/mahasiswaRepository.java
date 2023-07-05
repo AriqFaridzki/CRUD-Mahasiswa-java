@@ -17,7 +17,6 @@ import java.sql.SQLException;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.crypto.Mac;
 
 public class MahasiswaRepository {
  databaseConnector connector = new databaseConnector();
@@ -35,6 +34,11 @@ public class MahasiswaRepository {
 //        }
 //
 //    }
+ 
+// public static void main(String [] args){
+////     MahasiswaRepository test = MahasiswaRepository();
+//     
+// }
     public int addMahasiswa(Mahasiswa mahasiswa){
             String query = "INSERT INTO tb_mahasiswa VALUES (?,?,?,?,?)";
            

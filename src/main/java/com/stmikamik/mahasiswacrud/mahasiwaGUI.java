@@ -350,11 +350,9 @@ public class mahasiwaGUI extends javax.swing.JFrame {
     
     private void AddBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBtnActionPerformed
         // TODO add your handling code here:
-
         Mahasiswa mahasiswa = getAllFields();
-        int rowAffected = mahaRepository.addMahasiswa(mahasiswa);
         
-         if (rowAffected > 1)
+         if (mahaRepository.addMahasiswa(mahasiswa) > 1)
             statusLabel.setText("Data Berhasil Ditambah" );
         else{
             statusLabel.setText("Data Gagal Ditambah");
